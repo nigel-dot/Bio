@@ -1,97 +1,237 @@
 * {
-    margin: 0;
-  }
-  header {
-    /* display: flex;
-    flex-direction: row; */
-    font-family: Roboto , Helvetica , sans-serif;
-    color : white;
-    background: grey;
-     opacity: 0.5; 
-    text-align: center;
-    border: 3px solid black;
-  }
-  main > .banner {
-    /* border: 3px solid black; */
-    margin: 0;
-    display: column; 
-    padding-left: 0%;
-    margin-left: 0;
-    /* margin-right: auto;
-    width: 40%; 
-    padding-top: 5%;
-    padding-bottom: 5%; 
-    padding-left: 0%; 
-     opacity: 0.3; */
-  } 
-  
-  body {
-    margin: 0;
-    display: column;
-    /* display: flex;
-    flex-direction: row; */
-    /* border: 3px solid black; */
-    height: 100vh;
-  }
-   /* main * {
-    border: 3px solid black;
-    border-radius: 10px;
-  } */
-  .img {
-    /* display: block; 
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%; */
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 20%;
-    background: #b37423;
-    /* opacity: 0.3; */
-    border: 3px solid black;
-    border-radius: 10px;
-  } 
-  
-  h2 {
-    font-family: Roboto , Helvetica , sans-serif;
-    background: white;
-    text-decoration: underline;
-    padding-left: 10%;
-    line-height: 100px;
-    /* flex-grow: 1; */
-  }
-  main {
-    font-family: Roboto , Helvetica , sans-serif;
-    background: white;
-    padding-left: 10%;
-    line-height: 30px;
+	margin: 0;
+	padding: 0;
+}
 
-    }
-  
-  
-  /* nav ul {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  nav ul li {
-    list-style: none;
-    margin-left: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-  } */
-  
-  
-  footer {
-    /* display: flex;
-    flex-direction: row; */ 
-    color : white;
-    font-family: Roboto , Helvetica , sans-serif;
-    text-align: center;
-    background: grey;
-    opacity: 0.5; 
-    border: 3px solid black;
-  }
-  
-  
+/* :target {
+	display: block;
+	position: relative;
+	top: -48px;
+	visibility: hidden;
+} */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #333;
+	color: black;
+	height: 100vh;
+	line-height: 1.6;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	/* CSS Smooth Scroll */
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	/* scroll-snap-type: y mandatory; */
+}
+
+.lead {
+	font-size: 1.5rem;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	display: flex;
+	width: 100%;
+	height: 60px;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar ul {
+	display: flex;
+	list-style: none;
+	width: 100%;
+	justify-content: center;
+}
+
+.navbar ul li {
+	margin: 0 1rem;
+	padding: 1rem;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+	color: orange;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+
+	/* Scroll Snap */
+	scroll-snap-align: center;
+}
+
+section h2 {
+	font-size: 20vh;
+}
+.artwork h2 {
+	font-size: 0px;
+}
+
+#about {
+	color: white;
+	font-size: 4rem;
+}
+#art {
+	color: white;
+	font-size: 4rem;
+}
+/* Section Images */
+section#home {
+	background: url("images/nigel.jpg") no-repeat center center/cover;
+	/* Set a specific height */
+	min-height: 500px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+section#about {
+	background: url("images/Angry Sea.jpg");
+	/* Set a specific height */
+	min-height: 500px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+section#art {
+	background: url("images/grass.jpg") no-repeat center center/cover;
+	/* Set a specific height */
+	min-height: 500px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 20px;
+	padding: 2rem;
+}
+
+.card {
+	background: white;
+	padding: 1rem;
+	border-radius: 2px;
+}
+
+.card img {
+	width: 100%;
+}
+
+.card h2 {
+	color: black;
+}
+
+button {
+	background-color: orange;
+	border-radius: 20px;
+	color: white;
+	font-size: 20px;
+	box-shadow: 1px 3px #000;
+}
+
+.modal-outer {
+	display: grid;
+	background: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	/* Hide this modal until we need it */
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s;
+}
+
+.modal-outer img {
+	width: 100%;
+}
+
+.modal-outer.open {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.modal-inner {
+	max-width: 700px;
+	min-width: 400px;
+	padding: 2rem;
+	border-radius: 5px;
+	min-height: 200px;
+	background: white;
+	transform: translateY(-200%);
+	transition: transform 2s;
+}
+
+.modal-outer.open .modal-inner {
+	transform: translateY(0);
+}
+
+section#contact {
+	background: url("images/stone.jpg") no-repeat center center/cover;
+	/* Set a specific height */
+	min-height: 500px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.contactLink {
+	font-size: 24px;
+	color: white;
+}
+.contactLink a:hover {
+	color: orange;
+}
+.socialImg {
+	box-shadow: 0 0 10px black;
+	width: 75px;
+	height: 75px;
+	border-radius: 25%;
+}
+.footer {
+	text-align: center;
+	color: white;
+}
+@media all and (max-width: 600px) {
+	.modal-inner {
+		max-width: 400px;
+		max-height: 400px;
+		padding: 2rem;
+		border-radius: 5px;
+
+		background: white;
+		transform: translateY(-200%);
+		transition: transform 2s;
+	}
+	.modal-outer img {
+		max-width: 350px;
+		max-height: 350px;
+	}
+}
